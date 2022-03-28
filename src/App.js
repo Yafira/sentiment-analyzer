@@ -35,14 +35,15 @@ function App() {
 			<textarea
 				id='input'
 				onChange={handleChange}
-				placeholder='Hello, what do you feel today?'
+				placeholder='Text to analyze'
 				disabled={!modelIsReady}
 			></textarea>
 			<br />
 			<p>{modelIsReady ? '' : 'Loading model...'}</p>
 			<button onClick={calculateSentiment}>Calculate</button>
 			<br />
-			<p>Sentiment Score: {score.toFixed(5)}</p>
+
+			{score !== null ? <p>Sentiment Score: {score.toFixed(5)}</p> : ''}
 		</div>
 	)
 }
